@@ -1,0 +1,51 @@
+{% extends "perfil.html" %}
+{% block content %}
+<div class="col-nd">
+  <table class="tablemascotac">
+    <thead>
+      <tr>
+        <td><b>
+            <center>Signos Clinicos</center>
+          </b></td>
+        <td><b>
+            <center>Diagnostico</center>
+          </b></td>
+        <td><b>
+            <center>Tratamiento</center>
+          </b></td>        
+        <td><b>
+            <center>Fecha dia 1</center>
+          </b></td>
+          <td><b>
+            <center>Fecha dia 2</center>
+          </b></td>
+          <td><b>
+            <center>Fecha dia 3</center>
+          </b></td>
+          <td><b>
+            <center>Fecha dia 4</center>
+          </b></td>
+          <td><b>
+            <center>Fecha dia 5</center>
+          </b></td>
+      </tr>
+    </thead>
+    <tbody><center><b>MIS CONSULTAS:</b></center>
+      {% for consults in consultas %}
+      <tr>
+        
+        <td data-label="Nombre">{{ consults.1 }}</td>    
+        <td data-label="Signos Clínicos">{{ consults.8 }}</td>        
+        <td data-label="Diagnóstico">{{ consults.14 }}</td>
+        <td data-label="Tratamiento">{{ consults.15 }}</td>
+        <td data-label="Farmaco dia 1">{{ consults.17 }}</td>
+        <td data-label="Fecha dia 1">{{ consults.18 }}</td>
+        <!--<td data-label="Fecha dia 3">{{ consults.15 }}</td>
+        <td data-label="Fecha dia 4">{{ consults.17 }}</td>
+        <td data-label="Fecha dia 5">{{ consults.19 }}</td>-->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock%}

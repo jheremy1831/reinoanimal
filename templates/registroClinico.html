@@ -1,0 +1,208 @@
+{% extends "inicio2.html" %}
+{% block content3 %}
+<div class="col-md-4 offset-nd-4">
+    <div class="card2">
+        <div class="titulor">
+            <h2>Registro Clínico</h2>
+        </div>
+        <form class="formulario" action="/update3/{{contact.0}}" method="POST">
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <div class="titulopaciente">
+                    <center>
+                        <h2>DATOS DEL CLIENTE: </h2>
+                    </center>
+                </div>
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Identificador de Usuario: </h4><input type="text" name="id_usuario" required placeholder="usuario" readonly
+                    value="{{contact.7}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Usuario: </h4><input type="text" name="usuario" required placeholder="usuario" readonly
+                    value="{{contact.8}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Apellidos: </h4><input type="text" name="apellidos" required placeholder="apellidos" readonly
+                    value="{{contact.10}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Nombres: </h4><input type="text" name="nombres" required readonly
+                    placeholder="Color de pelo de tu mascota" value="{{contact.11}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Sexo: </h4><input type="sexo" name="sexo" required placeholder="sexo" readonly
+                    value="{{contact.13}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>C.I. : </h4> <input type="text" name="ci" required placeholder="ci" readonly value="{{contact.14}}"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Celular: </h4> <input type="text" name="celular" required placeholder="celular" readonly
+                    value="{{contact.15}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Fecha de Nacimiento: </h4> <input type="date" name="fecha_nacimiento" required placeholder="fecha_nacimiento" readonly
+                    value="{{contact.16}}" class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <div class="titulopaciente">
+                    <center>
+                        <h2>DATOS DEL PACIENTE: </h2>
+                    </center>
+                </div>
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Identificador de la Mascota: </h4> <input type="text" name="id_mascota" required readonly placeholder="fecha"
+                    value="{{contact.0}}" class="form-control">
+            </div>            
+            <div class="form-group">
+                <h4>Nombre: </h4> <input type="text" name="nombre_mascota" required readonly placeholder="fecha"
+                    value="{{contact.1}}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <h4>Edad: </h4> <input type="text" name="edad_mascota" required readonly placeholder="fecha"
+                    value="{{contact.2}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Color de Pelo: </h4> <input type="text" name="color_mascota" required readonly placeholder="fecha"
+                    value="{{contact.3}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Raza: </h4> <input type="text" name="raza_mascota" required readonly placeholder="fecha"
+                    value="{{contact.4}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Genero: </h4> <input type="text" name="genero_mascota" required readonly placeholder="fecha"
+                    value="{{contact.5}}" class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <div class="titulopaciente">
+                    <center>
+                        <h2>CONSTANTES FISIOLÓGICOS: </h2>
+                    </center>
+                </div>
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Signos Clinicos: </h4> <input type="text" name="signos" required placeholder="Escriba los sintomas" required value="{{contact.19}}"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Temperatura Dia 1: </h4> <input type="text" name="temperatura1" required value="{{contact.20}}"
+                    placeholder="Escriba la temperatura de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Temperatura Dia 2: </h4> <input type="text" name="temperatura2"  value="{{contact.21}}"
+                    placeholder="Escriba la temperatura de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Temperatura Dia 3: </h4> <input type="text" name="temperatura3"  value="{{contact.22}}"
+                    placeholder="Escriba la temperatura de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Temperatura Dia 4: </h4> <input type="text" name="temperatura4"  value="{{contact.23}}"
+                    placeholder="Escriba la temperatura de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Temperatura Dia 5: </h4> <input type="text" name="temperatura5"  value="{{contact.24}}"
+                    placeholder="Escriba la temperatura de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Diagnóstico: </h4> <input type="text" name="diagnostico" required value="{{contact.25}}"
+                    placeholder="Escriba el diagnóstico de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Tratamiento: </h4> <input type="text" name="tratamiento"  value="{{contact.26}}"
+                    placeholder="Escriba el tratamiento de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Duración del Tratamiento: </h4> <input type="text" name="tratamiento_duracion"  value="{{contact.27}}"
+                    placeholder="Escriba la duración del tratamiento de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Farmaco Dia 1: </h4> <input type="text" name="farmaco1" required value="{{contact.28}}"
+                    placeholder="Escriba el farmaco para la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Fecha del Farmaco Dia 1: </h4> <input type="date" name="fecha_farmaco1" required value="{{contact.29}}"
+                    placeholder="Escriba la fecha del farmaco de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Farmaco Dia 2: </h4> <input type="text" name="farmaco2"  value="{{contact.30}}"
+                    placeholder="Escriba el farmaco para la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Fecha del Farmaco Dia 2: </h4> <input type="date" name="fecha_farmaco2"  value="{{contact.31}}"
+                    placeholder="Escriba la fecha del farmaco de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Farmaco Dia 3: </h4> <input type="text" name="farmaco3"  value="{{contact.32}}"
+                    placeholder="Escriba el farmaco para la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Fecha del Farmaco Dia 3: </h4> <input type="date" name="fecha_farmaco3"  value="{{contact.33}}"
+                    placeholder="Escriba la fecha del farmaco de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Farmaco Dia 4: </h4> <input type="text" name="farmaco4"  value="{{contact.34}}"
+                    placeholder="Escriba el farmaco para la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Fecha del Farmaco Dia 4: </h4> <input type="date" name="fecha_farmaco4"  value="{{contact.35}}"
+                    placeholder="Escriba la fecha del farmaco de la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <h4>Farmaco Dia 5: </h4> <input type="text" name="farmaco5"  value="{{contact.36}}"
+                    placeholder="Escriba el farmaco para la mascota" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Fecha del Farmaco Dia 5: </h4> <input type="date" name="fecha_farmaco5"  value="{{contact.37}}"
+                    placeholder="Escriba la fecha del farmaco de la mascota" class="form-control">
+            </div>            
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btnp">
+                    Guardar
+                </button>
+            </div>
+        </form>
+        <form class="formulario" action="/cancelar2/" method="POST">
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn"> Cancelar</button>
+            </div>
+
+            <div class="form-group">
+            </div>
+            <!--falta crear el formulario y utilizar los datos que estan en una array-->
+        </form>
+    </div>
+</div>
+{% endblock%}

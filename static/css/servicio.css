@@ -1,0 +1,110 @@
+
+  .section-home{
+    position: relative;
+    min-height: 70vh;
+    background: url(../recursos/Animacioninicio1.gif)no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .servicios h1{
+    color: #F4FAD2;
+    font-size: 10vw;
+    font-weight: 800;
+    text-shadow: 0 5px 25px rgb(0 0 0 / 50%);
+    opacity: 0.8;
+  }
+
+  .todo-servicio{
+    background-color: #ffffff;
+    background-size: cover;
+    text-align: center;
+    border-radius: 5vh;
+    min-height: 80vh;
+  }  
+  
+  .section-two-servicio{
+    min-height: 100vh;
+    background: #2e006c;
+  }
+  div {
+    display: block;
+}
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+}
+.galeria-imagen {
+  border: 1px solid;
+}
+.galeria-imagen img{
+  height: 300px;
+  width: 500px;
+}
+.galeria-imagen span{
+position: absolute;
+display: flex;
+}
+
+.servtitulo h1{
+  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color: #2e006c;
+}
+
+.line-decorations h4{  
+  font-size: 30px;
+  color: #888888;
+  padding-bottom: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+  .line-decorations img {
+    width: 450px;
+    height: 300px;
+}
+.wf-container2, .wf-container2-main {
+  margin: 0 -22px;
+  padding: 0;
+}
+.wf-container2 {
+  font-size: 0;
+  line-height: 0;
+  word-spacing: 250px;
+}
+.wf-container2 > * {
+  font: normal normal normal 16px / 24px
+"Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  word-spacing: normal;
+  color: #888888;
+}
+.wf-container2:before, #main-nav:before, #top-bar:before, .header-bottom-bar:before, .layout-list .post:before {
+  content: "";
+  display: table;
+}
+.wf-container2:after, #main-nav:after, #top-bar:after, .header-bottom-bar:after, .layout-list .post:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width:1119px){  
+  .wf-container2, .wf-container2-main {
+    margin-left: -130px;
+    padding: 0;
+    width: 469px;
+  }
+  .line-decorations img {
+    width: 300px;
+    height: 170px;
+  }
+  .line-decorations h4 {
+    width: 290px;
+  }
+  .servicios h1 {
+    font-size: 20vw;
+}
+}

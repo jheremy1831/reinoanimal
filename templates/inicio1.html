@@ -1,0 +1,177 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+<div class="inicio">
+    <h1>Administrador</h1><!--admin - admin183101-->
+</div>
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">{{message}}</span>
+    <span class="close-btn">
+        <span class="fas fa-times"></span>
+    </span>
+
+    <script>
+        $('.close-btn').click(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock%}
+
+{% block content2 %}
+<section class="section-two-inicio">
+    <div class="todo">
+        <div class="titulo">
+            <h2>Registro de Personal</h2>
+        </div>
+        <div class="login-info-container">
+            <form action="/registro2/" method="POST" class="inputs-container">
+                <input class="input" type="text" autocomplete="off" name="usuario" required
+                    placeholder="Introduce un nombre de usuario" maxlength="20" minlength="3">
+                <input class="input" type="password" autocomplete="off" name="contraseña" required
+                    placeholder="Introduce una contraseña" maxlength="20" minlength="8">
+                <input class="input" type="text" autocomplete="off" name="apellidos" required
+                    placeholder="Introduce tus apellidos" maxlength="50" minlength="3">
+                <input class="input" type="text" autocomplete="off" name="nombres" required
+                    placeholder="Introduce tu nombre" maxlength="50" minlength="3">
+                <input class="input" type="text" autocomplete="off" name="email" required
+                    placeholder="Introduce tu email" maxlength="60" minlength="12">
+                <select class="input" autocomplete="off" name="sexo">
+                    <option value="none">Elija un genero</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otros">Otros</option>
+                </select>
+                <select class="input" autocomplete="off" name="rol">
+                    <option value="none">Elija un Rol</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Veterinario</option>
+                </select>
+                <input class="input" type="text" autocomplete="off" name="ci" required placeholder="Introduce tu CI">
+                <input class="input" type="text" autocomplete="off" name="celular" required
+                    placeholder="Introduce tu número celular" pattern="[0-9]+" maxlength="8" minlength="7">
+                <input class="input" type="date" autocomplete="off" min="1950-01-01" required name="fecha_nacimiento"
+                    placeholder="Fecha nacimiento"><br>
+                <button class="input" type="submit"> Guardar</button><br>
+            </form>
+        </div>
+        <div class="titulo">
+            <h2>Lista del Personal</h2>
+        </div>
+        <div class="col-nd-7">
+            <table class="tablemascota">
+                <thead>
+                    <tr>
+                        <td data-label="Usuario"><b>
+                                <center>Usuario</center>
+                            </b></td>
+                        <td data-label="Apellidos"><b>
+                                <center>Apellidos</center>
+                            </b></td>
+                        <td data-label="Nombres"><b>
+                                <center>Nombres</center>
+                            </b></td>
+                        <td data-label="Email"><b>
+                                <center>Email</center>
+                            </b></td>
+                        <td data-label="Sexo"><b>
+                                <center>Sexo</center>
+                            </b></td>
+                        <td data-label="C.I."><b>
+                                <center>C.I.</center>
+                            </b></td>
+                        <td data-label="Celular"><b>
+                                <center>Celular</center>
+                            </b></td>
+                        <td data-label="Fecha Nacimiento"><b>
+                                <center>Fecha Nacimiento</center>
+                            </b></td>
+                        <td data-label="Rol"><b>
+                                <center>Rol</center>
+                            </b></td>
+                        <td data-label="Funciones"><b>
+                                <center>Funciones</center>
+                            </b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td data-label="Usuario"><center>{{ contact.1 }}</center></td>
+                        <td data-label="Apellidos"><center>
+                            {% if contact.3|lower == 'none' or contact.3|lower == 'sin apellido' or contact.3|lower == 'sin datos'%}
+                            <!-- Código a ejecutar si contact.3 es None, vacío o null -->
+                            {% else %}
+                                {{ contact.3 }}
+                            {% endif %}
+                        </center></td>
+                        <td data-label="Nombres"><center>{{ contact.4 }}</center></td>
+                        <td data-label="Email"><center>{{ contact.5 }}</center></td>
+                        <td data-label="Sexo"><center>                            
+                            {% if contact.6|lower == 'none' or contact.6|lower == 'sin datos' %}
+                            <!-- Código a ejecutar si contact.6 es None, vacío o null -->
+                            {% else %}
+                                {{ contact.6 }}
+                            {% endif %}
+                        </center></td>
+                        <td data-label="C.I."><center>
+                            {% if contact.7|lower == 'none' or contact.7|lower == 'sin datos' %}
+                            <!-- Código a ejecutar si contact.6 es None, vacío o null -->
+                            {% else %}
+                                {{ contact.7 }}
+                            {% endif %}
+                        </center></td>
+                        <td data-label="Celular"><center>                            
+                            {% if contact.8 is none or contact.8|lower == 'sin datos' %}
+                            <!-- Código a ejecutar si contact.8 es None, vacío o null -->
+                            {% else %}
+                                {{ contact.8 }}
+                            {% endif %}</center></td>
+                        <td data-label="Fecha Nacimiento"><center>
+                            {% if contact.9 is none or contact.9 == '' %}
+                            <!-- Código a ejecutar si contact.9 es None, vacío o null -->
+                            {% else %}
+                                {{ contact.9 }}
+                            {% endif %}
+                        </center></td>
+                        <td data-label="Rol"><center>
+                            {% if contact.10 == 1 %}
+                                Administrador
+                            {% elif contact.10 == 2 %}
+                                Veterinario
+                            {% elif contact.10 == 3 %}
+                                Sin Asignar
+                            {% elif contact.10 == 4 %}
+                                Cliente
+                            {% else %}
+                                Sin asignar
+                            {% endif %}
+                        </center>
+                    </td>
+                        <td data-label="Funciones">
+                            <center><a href="/Editar2/{{ contact.0 }}" class="btn1">Editar</a>
+                            <a href="/Borrar2/{{ contact.0 }}" class="btn-delete">Borrar</a></center>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    {% block content3 %}
+
+{% endblock%}
+</section>
+
+{% endblock%}

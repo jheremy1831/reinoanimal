@@ -1,0 +1,106 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+<div class="inicio">
+    <h1>Veterinario</h1>
+</div>
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">{{message}}</span>
+    <span class="close-btn">
+        <span class="fas fa-times"></span>
+    </span>
+
+    <script>
+        $('.close-btn').click(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock%}
+
+{% block contentreporte %}
+<section class="section-two-inicio">
+    <div class="todo">
+        <div class="titulor">
+            <h2>Reportes</h2>
+        </div>
+        <center>
+            <a href="/reportes/1/" class="btnr">Usuarios</a>
+            <a href="/reportes/2/" class="btnr">Mascotas</a>
+            <a href="/reportes/3/" class="btnr">Registros Clínicos</a>
+            <a href="/reportes/4/" class="btnr">Enfermedad Parvovirus</a>
+            <a href="/reportes/5/" class="btnr">Enfermedad Moquillo</a>
+            <a href="/reportes/6/" class="btnr">Enfermedad Hepatitis Virica</a>
+            <a href="/reportes/7/" class="btnr">Enfermedad Parainfluenza</a>
+            <a href="/reportes/8/" class="btnr">Enfermedad Rabia</a>
+        </center>
+        <div class="col-nd-7">
+            <div class="titulor2">
+                <h2>Reporte de todas las Mascotas</h2>
+            </div>
+            <table class="tablemascota">
+                <thead>
+                    <tr>
+                        <td data-label="Nombre Mascota"><b>
+                                <center>Nombre</center>
+                            </b></td>
+                        <td data-label="Edad"><b>
+                                <center>Edad</center>
+                            </b></td>
+                        <td data-label="Color"><b>
+                                <center>Color Pelo</center>
+                            </b></td>
+                        <td data-label="Raza"><b>
+                                <center>Raza</center>
+                            </b></td>
+                        <td data-label="Genero"><b>
+                                <center>Genero</center>
+                            </b></td>
+                        <td data-label="Usuario"><b>
+                                <center>Usuario</center>
+                            </b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td data-label="Usuario">
+                            <center>{{ contact.1 }}</center>
+                        </td>
+                        <td data-label="Apellidos">
+                            <center>{{ contact.2 }}</center>
+                        </td>
+                        <td data-label="Nombres">
+                            <center>{{ contact.3 }}</center>
+                        </td>
+                        <td data-label="Email">
+                            <center>{{ contact.4 }}</center>
+                        </td>
+                        <td data-label="Sexo">
+                            <center>{{ contact.5 }}</center>
+                        </td>
+                        <td data-label="C.I.">
+                            <center>{{ contact.8 }}</center>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% block content3 %}
+
+    {% endblock%}
+</section>
+{% endblock%}

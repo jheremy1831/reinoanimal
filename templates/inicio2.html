@@ -1,0 +1,94 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+<div class="inicio">
+    <h1>Veterinario</h1>
+</div>
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">{{message}}</span>
+    <span class="close-btn">
+        <span class="fas fa-times"></span>
+    </span>
+
+    <script>
+        $('.close-btn').click(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock%}
+
+{% block content2 %}
+<section class="section-two-inicio">
+    <div class="todo">
+        <div class="titulor">
+            <h2>Lista de Usuarios</h2>
+        </div>
+        <div class="col-nd-7">
+            <table class="tablemascota">
+                <thead>
+                    <tr>
+                        <td data-label="Usuario"><b>
+                                <center>Usuario</center>
+                            </b></td>
+                        <td data-label="Apellidos"><b>
+                                <center>Apellidos</center>
+                            </b></td>
+                        <td data-label="Nombres"><b>
+                                <center>Nombres</center>
+                            </b></td>
+                        <td data-label="Email"><b>
+                                <center>Email</center>
+                            </b></td>
+                        <td data-label="Sexo"><b>
+                                <center>Sexo</center>
+                            </b></td>
+                        <td data-label="C.I."><b>
+                                <center>C.I.</center>
+                            </b></td>
+                        <td data-label="Celular"><b>
+                                <center>Celular</center>
+                            </b></td>
+                        <td data-label="Fecha Nacimiento"><b>
+                                <center>Fecha Nacimiento</center>
+                            </b></td>
+                        <td data-label="Funciones"><b>
+                                <center>Funciones</center>
+                            </b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td data-label="Usuario"><center>{{ contact.1 }}</center></td>
+                        <td data-label="Apellidos"><center>{{ contact.3 }}</center></td>
+                        <td data-label="Nombres"><center>{{ contact.4 }}</center></td>
+                        <td data-label="Email"><center>{{ contact.5 }}</center></td>
+                        <td data-label="Sexo"><center>{{ contact.6 }}</center></td>
+                        <td data-label="C.I."><center>{{ contact.7 }}</center></td>
+                        <td data-label="Celular"><center>{{ contact.8 }}</center></td>
+                        <td data-label="Fecha Nacimiento"><center>{{ contact.9 }}</center></td>
+                        <td data-label="Funciones">
+                            <center><a href="/inicio2-2/{{ contact.0 }}" class="btn1">Seleccionar Mascota</a></center>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% block content3 %}
+
+    {% endblock%}
+</section>
+{% endblock%}

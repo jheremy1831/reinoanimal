@@ -1,0 +1,83 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+<div class="inicio">
+    <h1>Veterinario</h1>
+</div>
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">{{message}}</span>
+    <span class="close-btn">
+        <span class="fas fa-times"></span>
+    </span>
+
+    <script>
+        $('.close-btn').click(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock%}
+
+{% block content2 %}
+<section class="section-two-inicio">
+    <div class="todo">
+        <div class="titulor">
+            <center><h2>Lista de Mascotas</h2></center>            
+        </div>
+        <div class="col-nd-7">
+            <table class="tablemascota">
+                <thead>
+                    <tr>
+                        <td data-label="Nombre"><b>
+                                <center>Nombre</center>
+                            </b></td>
+                        <td data-label="Edad"><b>
+                                <center>Edad</center>
+                            </b></td>
+                        <td data-label="Color Pelo"><b>
+                                <center>Color Pelo</center>
+                            </b></td>
+                        <td data-label="Raza"><b>
+                                <center>Raza</center>
+                            </b></td>
+                        <td data-label="Genero"><b>
+                                <center>Genero</center>
+                            </b></td>
+                        <td data-label="Funciones"><b>
+                                <center>Funciones</center>
+                            </b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td data-label="Nombre"><center>{{ contact.1 }}</center></td>
+                        <td data-label="Edad"><center>{{ contact.2 }}</center></td>
+                        <td data-label="Color Pelo"><center>{{ contact.3 }}</center></td>
+                        <td data-label="Raza"><center>{{ contact.4 }}</center></td>
+                        <td data-label="Genero"><center>{{ contact.5 }}</center></td>
+                        <td data-label="Funciones">
+                            <center><a href="/registroclinico/{{ contact.0 }}" class="btn1">Editar Registro Clinico</a>
+                            <!--<a href="/registroclinico/{{ contact.0 }}" class="btn1">Nuevo Registro Clinico</a>--></center>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% block content3 %}
+
+    {% endblock%}
+</section>
+{% endblock%}

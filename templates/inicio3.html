@@ -1,0 +1,113 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+<div class="inicio">
+    <h1>Asistente</h1>
+</div>
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">{{message}}</span>
+    <span class="close-btn">
+        <span class="fas fa-times"></span>
+    </span>
+
+    <script>
+        $('.close-btn').click(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock%}
+
+{% block content2 %}
+<section class="section-two-inicio">
+    <div class="todo">
+        <div class="titulo">
+            <h2>Bienvenidos a la Veterinaria<br>
+                Reino Animal</h2>
+        </div>
+        <div class="wpb_row wf-container ult-vc-hide-row"
+            style="margin-top: 0px; margin-bottom: 0px; position: relative; min-height: 0px;" data-rtl="false"
+            data-row-effect-mobile-disable="true">
+            <div class="upb_row_bg" data-bg-override="0"
+                style="background: rgb(255, 255, 255); min-width: 1206px; left: 0px; width: 1206px;"></div>
+            <div class="vc_col-sm-12 wpb_column column_container ">
+                <div class="wpb_wrapper">
+                    <div class="vc_empty_space" style="height: 30px"><span class="vc_empty_space_inner"></span></div>
+
+                    <section id="benefits-grid-1"
+                        class="benefits-grid wf-container animation-at-the-same-time light-bg light-hover-bg light-icon-color light-icon-hover-color static-line"
+                        data-width="300px" data-columns="3">
+                        <style type="text/css">
+                            #benefits-grid-1 .benefits-grid-ico>.fa {
+                                font-size: 160px;
+                                line-height: 160px;
+                            }
+                        </style>
+                        <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                            <div>
+                                <div class="text-big">
+                                    <div class="line-decoration"><span
+                                            class="benefits-grid-ico pulse animate-element animation-triggered start-animation"><img
+                                                src="https://clinicasalvatierra.com/wp-content/uploads/2014/12/Iconos-01.png"
+                                                width="160" height="160" alt="" style="margin: -28px;
+                                                margin-bottom: 10px;"></span>
+                                        <h4>Nuestra Misión</h4>
+                                    </div>
+                                    <p>Brindar calidad en servicios médicos a nuestras mascotas y proveer un
+                                        asesoramiento integral sobre crianza, nutrición y manejo de pequeños animales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                            <div>
+                                <div class="text-big">
+                                    <div class="line-decoration"><span
+                                            class="benefits-grid-ico pulse animate-element animation-triggered start-animation"><img
+                                                src="https://clinicasalvatierra.com/wp-content/uploads/2014/12/Iconos-02.png"
+                                                width="160" height="160" alt="" style="margin: -28px;
+                                                margin-bottom: 0px; margin-top:6px"></span>
+                                        <h4>Nuestra Visión</h4>
+                                    </div>
+                                    <p>Ser reconocida como clínica veterinaria de referencia de pequeños animales por la
+                                        excelencia de nuestros servicios, la calidad humana y el amor por los animales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                            <div>
+                                <div class="text-big">
+                                    <div class="line-decoration"><span
+                                            class="benefits-grid-ico pulse animate-element animation-triggered start-animation"><img
+                                                src="https://clinicasalvatierra.com/wp-content/uploads/2014/12/Iconos-03.png"
+                                                width="160" height="160" alt="" style="margin: -28px;
+                                                margin-bottom: 0px; margin-top:6px"></span>
+                                        <h4>Sobre Nosotros</h4>
+                                    </div>
+                                    <p style="text-align: center;">Somos la primera veterinaria que se inauguró en la
+                                        zona conocido como Reino Animal, un sueño hecho
+                                        realidad
+                                        impulsado por el amor que los canes en especial que despertaron en nuestros
+                                        corazones
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock%}

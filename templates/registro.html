@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino Animal</title>
+    <link rel="icon" type="image/png" href="./../static/recursos/logo verde.png">
+    <link rel="stylesheet" href="/static/css/styleRegistro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <section class="section-home">
+        <div class="login-container">
+            <div class="login-info-container">
+                <h1 class="title" style="text-transform: none;">Crea tu cuenta</h1>
+                <a href="{{ url_for('registrogoogle') }}" class="logo" target="_blank">
+                    <div class="social-login">
+                        <div class="social-login-element">
+                            <img src="./../static/recursos/google.svg" alt="google-image">
+                            <span>Google</span>
+                        </div>
+                    </div>
+                </a>
+                <p>ó</p><br>
+                <form action="/registro/" method="POST" class="inputs-container">
+                    <input class="input" type="text" autocomplete="off" name="usuario" required placeholder="Introduce un nombre de usuario" maxlength="20" minlength="3">
+                    <input class="input" type="password" autocomplete="off" name="contraseña" required placeholder="Introduce una contraseña" maxlength="20" minlength="8">
+                    <input class="input" type="text" autocomplete="off" name="apellidos" required placeholder="Introduce tus apellidos" maxlength="50" minlength="3">
+                    <input class="input" type="text" autocomplete="off" name="nombres" required placeholder="Introduce tu nombre" maxlength="50" minlength="3">
+                    <input class="input" type="text" autocomplete="off" name="email" required placeholder="Introduce tu email"maxlength="60" minlength="12">
+                    <select class="input" autocomplete="off" name="sexo">
+                        <option value="none">Elija una opción</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otros">Otros</option>
+                      </select>
+                    <input class="input" type="text" autocomplete="off" name="ci" required placeholder="Introduce tu CI">
+                    <input class="input" type="text" autocomplete="off" name="celular" required placeholder="Introduce tu número celular" pattern="[0-9]+" maxlength="8" minlength="7">
+                    <input class="input" type="date" autocomplete="off" min="1950-01-01" required
+                        name="fecha_nacimiento" placeholder="Fecha nacimiento"><br>
+                    <button class="input" type="submit"> Guardar</button><br>                  
+                    <p><strong>¿</strong>Ya tienes una cuenta<strong>? </strong> <span class="span"></span><a class="regis" href="{{ url_for('login') }}" class="logo"> Inicia sesión</a>
+                </form>
+            </div>
+            <img class="image-container" src="./../static/recursos/logo blanco con letras.png" alt="">
+        </div>
+    </section>

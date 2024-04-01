@@ -1,0 +1,149 @@
+{% extends "layout_principal.html" %}
+
+{% block content %}
+<div class="servicios">
+    <h1>Servicios</h1>
+</div>
+{% endblock%}
+
+{% block content2 %}
+
+<section class="section-two-servicio">
+    <div class="todo-servicio" style="padding-bottom: 30px;">
+        <span class="servtitulo"><h1>Los servicios que se ofrecen son :</h1></span>
+        <section id="benefits-grid-1"
+            class="benefits-grid wf-container2 animation-at-the-same-time light-bg light-hover-bg light-icon-color light-icon-hover-color static-line"
+            data-width="300px" data-columns="3">
+            <style type="text/css">
+                #benefits-grid-1 .benefits-grid-ico>.fa {
+                    font-size: 160px;
+                    line-height: 160px;
+                }
+
+
+                .img-container {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                #vacuna-text {
+                    display: none;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    /* Posicionamiento al centro */
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .img-container:hover #vacuna-text {
+                    display: block;
+                }
+            </style>
+            <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                <div>
+                    <div class="text-big">
+                        <div class="line-decorations">
+                            <span class="benefits-grid-ico pulse animate-element animation-triggered start-animation">
+                                <div class="img-container">
+                                    <img src="../static/recursos/vacuna.jpeg" width="500" height="300" alt="" style="border-radius: 40px;" id="vacuna-img">
+                                    <span class="vacuna-text" id="vacuna-text"><strong>🐾 ¡Mantén a tu mascota protegida con vacunas! 🐾</strong><br><br>
+
+                                        ¡En <strong>Reino Animal</strong> estamos aquí para cuidar de tu mejor amigo. ¡Vacúnalo y asegúrate de que esté protegido contra enfermedades!</span>
+                                </div>
+                            </span>
+                            <h4>VACUNAS</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                <div>
+                    <div class="text-big">
+                        <div class="line-decorations">
+                            <span class="benefits-grid-ico pulse animate-element animation-triggered start-animation">
+                                <div class="img-container">
+                                    <img src="../static/recursos/desparacitacion.jpg" width="500" height="300" alt="" style="border-radius: 40px;" id="vacuna-img">
+                                    <span class="vacuna-text" id="vacuna-text"><strong>🐾 ¡Protege a tu peludo amigo! 🐾</strong> <br><br>
+
+                                        ¡En <strong>Reino Animal</strong> ofrecemos desparasitación para mantener a tu mascota saludable y feliz! ¡Agenda tu cita hoy mismo y mantén a tu peludo protegido!</span>
+                                </div>
+                            </span>
+                            <h4>DESPARACITACIÓN</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                <div>
+                    <div class="text-big">
+                        <div class="line-decorations">
+                            <span class="benefits-grid-ico pulse animate-element animation-triggered start-animation">
+                                <div class="img-container">
+                                    <img src="../static/recursos/vitaminas.jpg" width="500" height="300" alt="" style="border-radius: 40px;" id="vacuna-img">
+                                    <span class="vacuna-text" id="vacuna-text"><strong>🐾 ¡Dale a tu mascota un impulso de vitalidad con vitaminas! 🐾</strong> <br><br>
+
+                                        ¡En <strong>Reino Animal</strong> ofrecemos suplementos vitamínicos para mantener a tu amigo peludo en su mejor estado. ¡Ayúdalo a brillar con salud y energía!</span>
+                                </div>
+                            </span>
+                            <h4>VITAMINAS</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                <div>
+                    <div class="text-big">
+                        <div class="line-decorations">
+                            <span class="benefits-grid-ico pulse animate-element animation-triggered start-animation">
+                                <div class="img-container">
+                                    <img src="../static/recursos/tratamiento.gif" width="500" height="300" alt="" style="border-radius: 40px;" id="vacuna-img">
+                                    <span class="vacuna-text" id="vacuna-text"><strong>🐾 ¡Bienestar completo para tu compañero peludo! 🐾</strong> <br><br>
+
+                                        Desde vacunas hasta suplementos vitamínicos, ofrecemos una gama completa de tratamientos para mantener a tu mascota en óptimas condiciones. ¡Déjanos cuidar de su salud y felicidad!</span>
+                                </div>
+                            </span>
+                            <h4>TRATAMIENTOS EN GRAL.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-cell" style="width: 33.3333%; display: inline-block;">
+                <div>
+                    <div class="text-big">
+                        <div class="line-decorations">
+                            <span class="benefits-grid-ico pulse animate-element animation-triggered start-animation">
+                                <div class="img-container">
+                                    <img src="../static/recursos/cirugias.jpg" width="500" height="300" alt="" style="border-radius: 40px;" id="vacuna-img">
+                                    <span class="vacuna-text" id="vacuna-text"><strong>🐾 ¡Cuidado experto para tu mascota! 🐾</strong> <br><br>
+
+                                        ¿Tu peludo amigo necesita una cirugía? No te preocupes, estamos aquí para ayudar. En <strong>Reino Animal</strong>, ofrecemos servicios quirúrgicos con la más alta calidad y cuidado.</span>
+                                </div>
+                            </span>
+                            <h4>CIRUGIAS EN GRAL.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const vacunaImg = document.getElementById("vacuna-img");
+    const vacunaText = document.getElementById("vacuna-text");
+
+    vacunaImg.addEventListener("mouseover", function() {
+        vacunaText.style.display = "block";
+    });
+
+    vacunaImg.addEventListener("mouseout", function() {
+        vacunaText.style.display = "none";
+    });
+});
+</script>
+
+{% endblock%}

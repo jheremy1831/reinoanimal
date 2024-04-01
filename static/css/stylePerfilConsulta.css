@@ -1,0 +1,118 @@
+.col-nd {
+    padding-left: 10px;
+    width: 100%;
+  }
+  
+  .tablemascotac td b {    
+    font-size: 6px;
+  }
+  .tablemascotac td b center{
+    font-size: 10px;
+  }
+
+  .tablemascotac thead{
+    display: none;
+ }
+  .tablemascotac, .tablemascotac tbody, .tablemascotac tr, .tablemascotac td{
+    display: block;
+    width: 600px;
+ }
+ .tablemascotac tr{
+   margin-bottom:15px;
+}
+ .tablemascotac td{
+     text-align: right;
+    padding-Left: 50%;
+     text-align: right;
+    position: relative;
+    padding-bottom: 27px;
+ }
+ .tablemascotac td b center::before{
+  content: attr(data-label);
+  position: absolute;
+  Left:0;
+  width: 50%;
+  padding-Left:15px;
+  font-size:15px;
+  font-weight: bold;
+  text-align: left;
+}
+ .tablemascotac td::before{
+  content: attr(data-label);
+  position: absolute;
+  Left:0;
+  width: 50%;
+  padding-Left:15px;
+  font-size:25px;
+  font-weight: bold;
+  text-align: left;
+  padding:5px;
+}
+
+.tablemascotac{
+    background-color: #f7fae8;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    font-size:20px;
+    padding:5px;
+}
+.tablemascotac tr:hover td{
+    background-color: #904FF7;
+    color: white;
+  }
+@media (max-width: 1119px){
+    .tablemascotac{
+        font-size:15px;
+        padding: 0px;
+    }
+    .col-nd {
+        padding-left: 0px;
+        width: 100%;
+      }
+      .tablemascotac td b {    
+        font-size: 6px;
+      }
+      .tablemascotac td b center{
+        font-size: 10px;
+      }
+    
+      .tablemascotac thead{
+        display: none;
+     }
+      .tablemascotac, .tablemascotac tbody, .tablemascotac tr, .tablemascotac td{
+        display: block;
+        width: 320px;
+        padding-top: 20px;
+     }
+     .tablemascotac tr{
+       margin-bottom:15px;
+    }
+     .tablemascotac td{
+         text-align: right;
+        padding-Left: 50%;
+         text-align: right;
+        position: relative;
+        padding-bottom: 20px;
+     }
+     .tablemascotac td b center::before{
+      content: attr(data-label);
+      position: absolute;
+      Left:0;
+      width: 50%;
+      padding-Left:15px;
+      font-size:15px;
+      font-weight: bold;
+      text-align: left;
+    }
+     .tablemascotac td::before{
+      content: attr(data-label);
+      position: absolute;
+      Left:0;
+      width: 50%;
+      padding-Left:15px;
+      font-size:18px;
+      font-weight: bold;
+      text-align: left;
+    }
+}

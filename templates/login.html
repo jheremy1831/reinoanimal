@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino Animal</title>
+    <link rel="icon" type="image/png" href="./../static/recursos/logo verde.png">
+    <link rel="stylesheet" href="/static/css/stylelogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="icon" type="image/png" href="./../static/recursos/logo verde.png">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/inicio.css">
+    <link rel="stylesheet" href="/static/css/servicio.css">
+    <link rel="stylesheet" href="/static/css/chatbot.css">
+    <link rel="stylesheet" href="/static/css/contactos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<header>
+    <a href="{{ url_for('home') }}" class="logo">
+        <img src="./../static/recursos/logo verde.png" alt="" width="50" height="60"><span>Reino Animal</span></a>
+    <div class="navigation">
+      <ul class="menu">
+        <div class="close-btn"></div>
+        <li class="menu-item"><a href="{{ url_for('home') }}">Inicio</a></li>
+        <li class="menu-item"><a href="{{ url_for('servicios') }}">Servicios</a></li>
+        <li class="menu-item"><a href="{{ url_for('consultas_online') }}">Consultas Online</a></li>
+        <li class="menu-item"><a href="{{ url_for('contactos') }}">Contactos</a></li>
+        <li class="menu-item">
+          <a class="sub-btn" href="{{ url_for('login') }}">Iniciar Sesión</i></a>
+
+        </li>
+      </ul>
+    </div>
+    <div class="menu-btn"></div>
+  </header>
+  <style>.logo {
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+    color: #000; /* Cambia el color del texto según tu diseño */
+  }
+  
+  .logo img {
+    margin-right: 10px; /* Añade un poco de espacio entre la imagen y el texto */
+  }</style>
+<body>
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert show">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">{{message}}</span>
+        <span class="close-btn">
+            <span class="fas fa-times"></span>
+        </span>
+
+        <script>
+            $('.close-btn').click(function () {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <section class="section-home" style="min-height: 100vh; background: url(./../static/recursos/Animacioninicio1.gif) no-repeat; background-size: cover;">
+        <div class="login-container">
+            <div class="login-info-container">
+                <h1 class="title">Iniciar sesión</h1>
+                <a href="{{ url_for('logingoogle') }}" class="logo">
+                    <div class="social-login">
+                        <div class="social-login-element">
+                            <img src="./../static/recursos/google.svg" alt="google-image">
+                            <span>Google</span>
+                        </div>
+                    </div>
+                </a>
+                <p>O</p><br>
+                <form class="inputs-container" action="/login" method="POST">
+                    <input class="input" autocomplete="off" type="text" name="usuario" required placeholder="Usuario">
+                    <input class="input" autocomplete="off" type="password" name="contraseña" required
+                        placeholder="Contraseña">
+                    <!--<p>¿No recuerdas tu contraseña? <span class="span"><a class="regis" href="#">Click Aqui</a></span>
+                    </p>-->
+                    <button class="btn">Iniciar Sesión</button>
+                    <p><strong>¿</strong>No tienes una cuenta<strong>? </strong><span class="span"><a class="regis"
+                                href="{{ url_for('registro')}}">Crear una cuenta</a></span></p>
+                </form>
+            </div>
+            <img class="image-container" src="./../static/recursos/logo verde semi cuadrado con letras oscuras.png">
+        </div>
+    </section>

@@ -1,0 +1,128 @@
+{% extends "perfil.html" %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+  <span class="fas fa-exclamation-circle"></span>
+  <span class="msg">{{message}}</span>
+  <span class="close-btn">
+    <span class="fas fa-times"></span>
+  </span>
+
+  <script>
+    $('.close-btn').click(function () {
+      $('.alert').removeClass("show");
+      $('.alert').addClass("hide");
+    });
+  </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/subir/" method="POST" class="inputs-container">
+  <table class="tabla">
+    <TR>
+      <TD>
+        <h2>Mi Información: </h2>
+      </TD>
+    </TR>
+    <table class="tabla2">
+      <TR>
+        <TD>
+          <h4>Usuario: </h4>
+        </TD>
+        <TD><input class="input" type="text" autocomplete="off" name="usuario" placeholder="usuario"
+            value="{{session['usuario']}}"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Contraseña: </h4>
+        </TD>
+        <TD><input class="input" type="password" autocomplete="off" readonly name="contraseña" placeholder="Contraseña"
+            title="Contraseña" value="{{session['contraseña']}}"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Contraseña actual: </h4>
+        </TD>
+        <TD><input class="input" type="password" autocomplete="off" name="contraseña_anterior"
+            placeholder="Contraseña anterior"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Contraseña nueva: </h4>
+        </TD>
+        <TD><input class="input" type="password" autocomplete="off" name="contraseña_nueva"
+            placeholder="Contraseña nueva"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Confirmar contraseña nueva: </h4>
+        </TD>
+        <TD><input class="input" type="password" autocomplete="off" name="contraseña_confirmada"
+            placeholder="Confirmar contraseña nueva"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Nombres: </h4>
+        </TD>
+        <TD><input class="input" type="text" autocomplete="off" name="nombres" placeholder="nombres"
+            value="{{session['nombres']}}"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Apellidos: </h4>
+        </TD>
+        <TD><input class="input" type="text" autocomplete="off" name="apellidos" placeholder="apellidos"
+            value="{{session['apellidos']}}"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Correo electrónico: </h4>
+        </TD>
+        <TD><input class="input" autocomplete="off" name="email" placeholder="email" value="{{session['email']}}"><br>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Sexo: </h4>
+        </TD>
+        <TD><input class="input2" type="text" autocomplete="off" name="sexo" placeholder="sexo" readonly
+            value="{{session['sexo']}}">
+          <select class="input2" autocomplete="off" name="sexo1">
+            <option value="none">Cambiar sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Carnet de identidad: </h4>
+        </TD>
+        <TD><input class="input" type="text" autocomplete="off" name="ci" placeholder="ci"
+            value="{{session['ci']}}"><br>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Celular: </h4>
+        </TD>
+        <TD><input class="input" type="text" autocomplete="off" name="celular" placeholder="celular" pattern="[0-9]+"
+            maxlength="8" minlength="7" value="{{session['celular']}}"><br></TD>
+      </TR>
+      <TR>
+        <TD>
+          <h4>Fecha de nacimiento: </h4>
+        </TD>
+        <TD><input class="input" type="date" required min="1950-01-01" max="2021-12-31" name="fecha_nacimiento"
+            value="{{consultastabla.9}}"><br></TD>
+      </TR>
+    </table>
+  </table>
+  <button type="submit" class="btn"> Guardar</button>
+</form>
+{% endblock%}

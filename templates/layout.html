@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reino Animal</title>
+  <link rel="icon" type="image/png" href="./../static/recursos/logo verde.png">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/inicio.css">
+  <link rel="stylesheet" href="/static/css/servicio.css">
+  <link rel="stylesheet" href="/static/css/chatbot.css">
+  <link rel="stylesheet" href="/static/css/contactos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<style>.logo {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+  color: #000; /* Cambia el color del texto según tu diseño */
+}
+
+.logo img {
+  margin-right: 10px; /* Añade un poco de espacio entre la imagen y el texto */
+}</style>
+<body>
+
+  <header>
+    <a href="{{ url_for('home') }}" class="logo">
+      <img src="./../static/recursos/logo verde.png" alt="" width="50" height="60"><span>Reino Animal</span></a>
+    <div class="navigation">
+      <ul class="menu">
+        <div class="close-btn"></div>
+        <li class="menu-item"><a href="{{ url_for('home') }}">Inicio</a></li>
+        <li class="menu-item"><a href="{{ url_for('servicios') }}">Servicios</a></li>
+        <li class="menu-item"><a href="{{ url_for('consultas_online') }}">Consultas Online</a></li>
+        <li class="menu-item"><a href="{{ url_for('contactos') }}">Contactos</a></li>
+        <li class="menu-item">
+          <a class="sub-btn" href="#">Mi Cuenta <i class="fas fa-angle-down"></i></a>
+          <ul class="sub-menu">
+            <li class="sub-item more">
+              <a class="more-btn" href="#">{{session['usuario']}} <i class="fas fa-angle-right"></i></a>
+              <ul class="more-menu">
+                <li class="more-item"><a href="{{ url_for('informacion')}}">Mi Información</a></li>
+                <li class="more-item"><a href="{{ url_for('mascotas')}}">Mis Mascotas</a></li>
+                <li class="more-item"><a href="{{ url_for('consultas')}}">Mis Consultas</a></li>
+                {% for contact in contacts %}                
+                <li class="more-item"><a href="{{ url_for('consultas')}}">contact.1</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="sub-item"><a href="/salir">Cerrar sesión
+                <!--<span>{{session['usuario']}}</span>-->
+              </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-btn"></div>
+  </header>
+  <section class="section-home">
+    {% block content %}
+    {% endblock%}
+  </section>
+  {% block content2 %}
+  {% endblock%}
+
+  <script src="{{url_for('static', filename='js/nain.js')}}"></script>
+  <script type="text/javascript">
+    //jquery for toggle dropdown menus
+    $(document).ready(function () {
+      //toggle sub-menus
+      $(".sub-btn").click(function () {
+        $(this).next(".sub-menu").slideToggle();
+      });
+
+      //toggle more-menus
+      $(".more-btn").click(function () {
+        $(this).next(".more-menu").slideToggle();
+      });
+    });
+
+    //javascript for the responsive navigation menu
+    var menu = document.querySelector(".menu");
+    var menuBtn = document.querySelector(".menu-btn");
+    var closeBtn = document.querySelector(".close-btn");
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+
+    //javascript for the navigation bar effects on scroll
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+  </script>
+
+</body>
+
+</html>

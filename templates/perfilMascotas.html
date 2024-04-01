@@ -1,0 +1,107 @@
+{% extends "perfil.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-5">
+        {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert show">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg">{{message}}</span>
+            <span class="close-btn">
+                <span class="fas fa-times"></span>
+            </span>
+
+            <script>
+                $('.close-btn').click(function () {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                });
+            </script>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="card">
+            <form action="/agregar_mascota" method="POST">
+                <div class="form-group">
+                    <h2>Nueva Mascota</h2>
+                </div>
+                <div class="form-group">
+                    <h4>Nombre de mascota: </h4><input type="text" autocomplete="off" name="nombre_mascota" required
+                        placeholder="Nombre de tu mascota" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h4>Edad de mascota: </h4><input type="text" autocomplete="off" name="edad_mascota" required maxlength="20" minlength="1"
+                        placeholder="Edad de tu mascota" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h4>Color de pelo de mascota: </h4><input type="text" autocomplete="off" name="color_pelo_mascota" required
+                        placeholder="Color de pelo de tu mascota" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h4>Raza de mascota: </h4><input type="text" autocomplete="off" name="raza_mascota" required 
+                        placeholder="Raza de tu mascota" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h4>Genero de mascota: </h4> <select class="input" autocomplete="off" name="genero_mascota">
+                        <option value="none">Elija una opción</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+                <div class="form-group2">
+                    <button type="submit" class="btn-guardar">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-nd-7">
+        <table class="tablemascota">
+            <thead>
+                <tr>
+                    <td data-label="Nombre de Mascota"><b>
+                            <center>Nombre de Mascota</center>
+                        </b></td>
+                    <td data-label="Edad"><b>
+                            <center>Edad</center>
+                        </b></td>
+                    <td data-label="Color de Pelo"><b>
+                            <center>Color de Pelo</center>
+                        </b></td>
+                    <td data-label="Raza"><b>
+                            <center>Raza</center>
+                        </b></td>
+                    <td data-label="Genero"><b>
+                            <center>Genero</center>
+                        </b></td>
+                    <td data-label="Funciones"><b>
+                            <center>Funciones</center>
+                        </b></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td data-label="Nombre de Mascota">{{ contact.1 }}</td>
+                    <td data-label="Edad">{{ contact.2 }}</td>
+                    <td data-label="Color de Pelo">{{ contact.3 }}</td>
+                    <td data-label="Raza">{{ contact.4 }}</td>
+                    <td data-label="Genero">{{ contact.5 }}</td>
+                    <td data-label="Funciones">
+                        <a href="/Editar/{{ contact.0 }}" class="btn1">Editar</a>
+                        <a href="/Borrar/{{ contact.0 }}" class="btn-delete">Borrar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+{% endblock%}

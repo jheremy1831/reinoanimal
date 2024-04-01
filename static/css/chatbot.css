@@ -1,0 +1,247 @@
+
+  .section-home{
+    position: relative;
+    min-height: 70vh;
+    background: url(../recursos/Animacioninicio1.gif)no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .chat h1{
+    color: #F4FAD2;
+    font-size: 9vw;
+    font-weight: 800;
+    text-shadow: 0 5px 25px rgb(0 0 0 / 50%);
+    opacity: 0.8;
+  }
+
+  .todo-consultas{
+    background-color: #ffffff;
+    background-size: cover;
+    border-radius: 5vh;
+    min-height: 80vh;
+    align-items: center;
+    height: 80vh;
+    font-family: Helvetica, sans-serif;
+  }  
+  
+  .section-two{
+    min-height: 112vh;
+    background: #2e006c;
+  }
+  .card input{
+    padding-left: 20px;
+    border-color: #2e006c;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    width: 380px;
+    height: 3.125rem;
+    font-size: 1em;
+    margin: 5px;
+   }
+   .card{
+    padding-left: 600px;
+    border-color: #2e006c;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1em;
+    margin: 5px;
+   }
+   .btn-guardar{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 8px;
+    background-color: #2e006c;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    height: 40px;
+    width: 100px;
+    align-items: center;
+   }
+   .btn-guardar:hover {
+    background-color: #904FF7;
+  }
+   .form-group h2{
+    font-size: 1em;
+    color: white;
+    font-size: 25px;
+   }
+   .form-group{
+    font-size: 1em;
+    color: white;
+   }
+   .form-group2{
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    padding-left: 130px;;
+   }
+   .input {
+    padding-left: 20px;
+    border-color: #2e006c;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    width: 380px;
+    height: 3.125rem;
+    font-size: 1em;
+    margin-left: 5px;
+  }
+  @media (max-width: 1119px){  
+  .section-two{
+    min-height: 130vh;
+  }
+  .card input{
+    width: 340px;
+  }
+  .input{
+    width: 340px;
+  }
+  .chat h1 {
+    font-size: 11vw;
+  }
+  .card {
+    padding-left: 3px;
+    padding-top: 15px;
+    
+  }
+}
+  /*pdf*/
+  .suggestionsBox {
+    width: 340px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    top: 0;
+    left: 0;    
+    font-family: "Poppins", sans-serif;
+    margin-left:5px;    
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1em;
+    margin: 5px;
+}
+/*
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 380px;
+    height: 3.125rem;
+    font-size: 1em;
+    margin: 5px;*/
+.suggestionList {
+    margin: 0px;
+    padding: 0px;
+}
+
+.suggestionList ul li {
+    list-style: none;    
+    padding: 10px;
+    cursor: pointer;    
+    color: #000;
+    font-family: "Poppins", sans-serif;
+}
+
+.suggestionList ul li:hover {
+    background-color: #1E90FF;
+    color: #000;
+    text-align: left;
+    border-radius: 5px;
+}
+
+
+
+#suggest {
+    position: relative;
+}
+
+.sf_active {
+    border: 2px #8BB544 solid;
+    background: #fff;
+    color: #333;
+}
+
+
+
+.alert{
+  background: #904FF7;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 10px;
+  top: 90px;
+  overflow: hidden;
+  border-radius: 4px;
+  border-left: 8px solid #2e006c;
+  z-index: 3000;
+}
+
+.alert.show{
+  animation: show_slide 1s ease forwards;
+ }
+.alert .fa-exclamation-circle{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2e006c;
+  font-size: 30px;
+ }
+
+ .alert .msg{
+  padding: 0 20px;
+  font-size: 18px;
+  color: #fff;
+ }
+ .alert .close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #904FF7;
+  padding: 20px 18px;
+  cursor: pointer;
+ }
+ .close-btn:hover{
+  background: #2e006c;
+ }
+ .close-btn .fa-times{
+  color: #2e006c;
+  font-size: 22px;
+  line-height: 40px;
+ }
+ .alert.show{
+  animation: show_slide 1s ease forwards;
+ }
+ @keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10);
+  }
+ }
+ .alert.hide{
+  display: none;
+ }
+
+ .close-btn .fa-times{
+  color: #fff;
+  font-size: 22px;
+  line-height: 40px;
+ }

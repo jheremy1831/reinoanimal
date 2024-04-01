@@ -1,0 +1,104 @@
+{% extends "layout_principal.html" %}
+
+{% block content %}
+<div class="contacto">
+    <h1>Contactos</h1>
+</div>
+{% endblock%}
+
+{% block content2 %}
+<section class="section-two-servicio">
+
+    <div class="todo-servicio" style="padding-bottom: 30px;">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <span class="servtitulo">
+                            <h1>NUESTROS CONTACTOS:</h1>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="line-decorationc"><span class="benefits-grid-ico"><img src="../static/recursos/perros.png"
+                alt="" style="border-radius: 40px;"></span>
+            </div>
+            <div class="wrapper">
+                <div class="row">
+
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-phone" aria-hidden="true"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Contacto:</span> <a href="whatsapp://send?phone=+59165644998" target="_blank">+591 76234182</a></p>
+                    </div>
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-paper-plane" aria-hidden="true"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Correo Electrico:</span> <a
+                                href="mailto:ReinoAnimal@gmail.com" target="_blank">ReinoAnimal@gmail.com</a></p>
+                    </div>
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-globe" aria-hidden="true"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Sitio Web:</span> <a href="#">Reino-Animal.com</a></p>
+                    </div>
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-map-marker" aria-hidden="true"></span>
+                    </div>
+                    <div class="text">
+                        <p><span>Dirección: <a href="https://maps.app.goo.gl/26mRRhVCVBZsf9N58" target="_blank"></span>Nos encontramos en la ciudad del Alto plena Avenida Union, entre calle S1 y Calle 6</p></a>                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</section>
+<style>
+    .wrapper {
+    max-width: max-content; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 0px 0px 0px 0px; /* Añade un poco de espacio alrededor del contenido */
+    }
+
+    .row {
+        display: flex; /* Utiliza un diseño flexbox para alinear los elementos en una fila */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+    }
+
+    .icon {
+        width: 50px; /* Ajusta el ancho del ícono según tus necesidades */
+        height: 50px; /* Ajusta la altura del ícono según tus necesidades */
+        background-color: #f2f2f2; /* Cambia el color de fondo según tu diseño */
+        border-radius: 50%; /* Hace que el ícono tenga forma de círculo */
+        margin-right: 20px; /* Añade un poco de espacio entre los íconos y el texto */
+        display: flex; /* Utiliza un diseño flexbox para centrar el ícono verticalmente */
+        align-items: center; /* Centra el ícono verticalmente */
+        justify-content: center; /* Centra el ícono horizontalmente */
+    }
+
+    .text {
+        flex: 1; /* Hace que el texto ocupe todo el espacio restante disponible */
+    }
+
+    .text p {
+        margin: 10px 0; /* Añade un poco de espacio entre los párrafos */
+    }
+
+    .text span {
+        font-weight: bold; /* Hace que el texto del span sea negrita */
+    }
+
+    .text a {
+        color: #007bff; /* Cambia el color del enlace según tu diseño */
+        text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+        transition: color 0.3s; /* Agrega una transición suave al color del enlace */
+    }
+
+    .text a:hover {
+        color: #0056b3; /* Cambia el color del enlace al pasar el mouse sobre él */
+    }
+</style>
+{% endblock%}

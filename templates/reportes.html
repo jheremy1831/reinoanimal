@@ -1,0 +1,54 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+<div class="inicio">
+    <h1>Veterinario</h1>
+</div>
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert show">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">{{message}}</span>
+    <span class="close-btn">
+        <span class="fas fa-times"></span>
+    </span>
+
+    <script>
+        $('.close-btn').click(function () {
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock%}
+
+{% block contentreporte %}
+<section class="section-two-inicio">
+    <div class="todo">
+        <div class="titulor">
+            <h2>Reportes</h2>
+        </div>
+        <center>
+            <a href="/reportes/1/" class="btnr">Usuarios</a>
+            <a href="/reportes/2/" class="btnr">Mascotas</a>
+            <a href="/reportes/3/" class="btnr">Registros Clínicos</a>
+            <a href="/reportes/4/" class="btnr">Enfermedad Parvovirus</a>
+            <a href="/reportes/5/" class="btnr">Enfermedad Moquillo</a>
+            <a href="/reportes/6/" class="btnr">Enfermedad Hepatitis Virica</a>
+            <a href="/reportes/7/" class="btnr">Enfermedad Parainfluenza</a>
+            <a href="/reportes/8/" class="btnr">Enfermedad Rabia</a>
+        </center>
+        
+    </div>
+    {% block content3 %}
+
+    {% endblock%}
+</section>
+{% endblock%}

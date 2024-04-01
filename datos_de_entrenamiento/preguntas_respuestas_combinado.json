@@ -1,0 +1,58 @@
+{
+    "enfermedad_parvovirus": [
+        {
+            "preguntas":[""
+
+        ],
+            "respuesta": ""
+        }
+    ],
+    "enfermedad_moquillo": [
+        {
+            "preguntas":[""
+
+            ],
+            "respuesta": ""
+        }
+    ],    
+    "enfermedad_hepatitis_virica": [
+        {
+            "preguntas":[""
+
+            ],
+            "respuesta": ""
+        }
+    ],
+    "enfermedad_parainfluenza": [
+        {
+            "preguntas":[""
+
+            ],
+            "respuesta": ""
+        }
+    ],
+    "enfermedad_rabia": [
+        {
+            "preguntas":[""
+
+            ],
+            "respuesta": ""
+        }
+    ],
+    "otras_preguntas": [
+        {
+            "preguntas":[""
+
+            ],
+            "respuesta": ""
+        }
+    ],
+    "preguntas_simples": [
+        {
+            "preguntas":[""
+
+            ],
+            "respuesta": ""
+        }
+    ]
+}

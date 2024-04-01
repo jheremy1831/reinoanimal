@@ -1,0 +1,32 @@
+{% extends "perfil.html" %}
+{% block content %}
+<div class="col-md-4 offset-nd-4">
+    <div class="card2">
+        <form action="/update/{{contact.0}}" method="POST">
+            <div class="form-group">
+                <h2>Editar Mascota</h2>
+            </div>
+            <div class="form-group">
+                <h4>Nombre de mascota: </h4><input type="text" name="nombre_mascota" required placeholder="Nombre de tu mascota" value="{{contact.1}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Edad de mascota: </h4><input type="text" name="edad_mascota" required placeholder="Edad de tu mascota" value="{{contact.2}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Color de pelo de mascota: </h4><input type="text" name="color_pelo_mascota" required placeholder="Color de pelo de tu mascota" value="{{contact.3}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Raza de mascota: </h4><input type="text" name="raza_mascota" required placeholder="Raza de tu mascota" value="{{contact.4}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <h4>Genero de mascota: </h4> <input type="text" name="genero_mascota" required placeholder="Genero de tu mascota" value="{{contact.5}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btnp">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+ </div>
+{% endblock%}

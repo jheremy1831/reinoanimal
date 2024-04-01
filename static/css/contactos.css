@@ -1,0 +1,50 @@
+
+  .section-home{
+    position: relative;
+    min-height: 50vh;
+    background: url(../recursos/Animacioninicio1.gif)no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacto h1{
+    color: #F4FAD2;
+    font-size: 10vw;
+    font-weight: 800;
+    text-shadow: 0 5px 25px rgb(0 0 0 / 50%);
+    opacity: 0.8;
+  }
+
+  .section-two-servicio{
+    min-height: 82vh;
+    background: #2e006c;
+  }
+  div {
+    display: block;
+}
+.titulo-contactos h2 {
+  position: relative;
+  color: #2e006c;
+  font-size: 2.5em;
+  font-weight: bold;
+  display: flex;
+  padding: 0 300px;
+  margin: 0 auto;
+  padding: 10px;
+  top: 100px;
+}
+.line-decorationc img{
+  width: 1400px;
+  height: 520px;
+}
+@media (max-width: 1119px){  
+  .line-decorationc img{
+    width: 350px;
+    height: 170px;
+  }
+  .contacto h1 {
+    font-size: 18vw;
+  }
+}

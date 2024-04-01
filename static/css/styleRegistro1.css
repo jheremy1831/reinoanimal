@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/*Login*/
+:root {
+  --login-bg:#723CDE;
+  --title-bg: #ffffff;
+  --button-bg: #2e006c;
+  --light-pink: #6f6f6f;
+  --image-bg:  #723CDE ;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+    height: 44rem;
+    width: 70rem;
+    margin: 6em auto;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.login-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 3rem;
+    background-color: #2e006ced;
+}
+
+.login-info-container a{
+  text-decoration: none;
+  color: #F4FAD2;
+}
+
+.login-info-container .regis{
+  text-decoration: none;
+  color: #F4FAD2;
+}
+
+.image-container {
+    padding: 4rem;
+    width: 52%;
+    background-color: var(--image-bg);
+    box-sizing: border-box;
+}
+
+.title {
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--title-bg);
+}
+
+.social-login {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.social-login-element {
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    border: 1px solid var(--button-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-login-element img {
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0;
+    left: -0.625rem;
+}
+
+.social-login-element:hover {
+  background-color: #904FF7;
+}
+
+.login-info-container > p {
+    font-size: 1.25em;
+    margin-top: 1.5em;
+}
+
+.inputs-container {
+    height: 60%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input, .btn {
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+}
+
+.input {
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 0.4rem;
+    box-sizing: border-box;
+}
+
+.input:hover {
+    border: 5px solid #723cde;
+}
+
+.btn {
+    width: 110px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    cursor: pointer;
+    padding-left: 715px;
+}
+
+.inputs-container p {
+    margin: 0;
+}
+
+.span {
+    color: var(--light-pink);
+    font-weight: 600;
+    cursor: pointer;
+}
+/*body completo*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  section{
+    padding: 25px 25px;
+  }
+  
+  .inicio h1 {
+    font-size: 12vw;
+  }
+  .more .more-menu{
+    position: absolute;
+    background: #23252B;
+    list-style: none;
+    top: 0;
+    left: 100%;
+    white-space: nowrap;
+    border-radius: 0 8px 8px 8px;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s;
+    transition-property: transform, opacity;
+  }
+  
+  .more:hover .more-menu{
+    pointer-events: all;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .more .more-menu .more-item{
+    padding: 7px 0;
+    box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+  }
+  
+  
+  .menu-btn{
+    display: none;
+  }
+
+
+/*tabla*/
+.tablemascota thead {
+  background-color: #723CDE;
+  border-bottom: solid 5px #2e006c;
+  color: white;
+}
+.tablemascota {
+  background-color: #f7fae8;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+.tablemascota td {
+  padding: 20px;
+}
+.tablemascota {
+  background-color: #f7fae8;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tablemascota tr:nth-child(even){
+  background-color: #ddd;
+}
+.tablemascota tr:hover td{
+  background-color: #904FF7;
+  color: white;
+}
+
+.btn1 {
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 5px;
+  background-color: #2e006c;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  height: 40px;
+  width: 100px;
+  align-items: center;
+  padding: 3px;
+  text-decoration: none;
+}
+.btn-delete{
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 5px;
+  background-color: #2e006c;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  height: 40px;
+  width: 100px;
+  align-items: center;
+  padding: 3px;
+  text-decoration: none;
+ }
+.btn1:hover {
+  background-color: #723CDE;
+}
+.btn-delete:hover {
+  background-color: #723CDE;
+}
+
+.form-control {
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 0.4rem;
+  box-sizing: border-box;
+  height: 50px;
+  width: 550px;  
+  padding-left: 20px;
+}
+.form-group {
+  font-size: 1em;
+  color: white;
+  margin-left: 500px;
+}
+.btnp {
+  padding-top: 5px;
+  width: 520px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-bg);
+  cursor: pointer;
+  height: 40px;
+}
